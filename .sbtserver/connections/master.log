@@ -1,0 +1,36 @@
+New log file opened at Sun Feb 28 03:10:51 IST 2016 by 13956@Owner-PC
+Taking next connection to: 53187
+New client attempting to connect on port: 53188-53187
+  Address = /192.168.1.12:53187
+This client on port 53188 has uuid 5d0a05d2-0102-4df8-9ee2-3b4580100b08 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-5d0a05d2-0102-4df8-9ee2-3b4580100b08
+Taking next connection to: 53187
+New client attempting to connect on port: 53191-53187
+  Address = /192.168.1.12:53187
+Handshake exception on socket: 53191
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.fill(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 53187
+New client attempting to connect on port: 53192-53187
+  Address = /192.168.1.12:53187
+This client on port 53192 has uuid d3784f72-4b5e-4d14-b480-3b15329f661b configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-5d0a05d2-0102-4df8-9ee2-3b4580100b08, activator-d3784f72-4b5e-4d14-b480-3b15329f661b
+Taking next connection to: 53187
+Server socket closed java.net.SocketException: Socket operation on nonsocket: configureBlocking
+Server socket thread exiting.
+1 clients open, will close them...
+All client sockets have been closed.
+Closing the 13956@Owner-PC logs at Sun Feb 28 03:11:28 IST 2016, goodbye.
