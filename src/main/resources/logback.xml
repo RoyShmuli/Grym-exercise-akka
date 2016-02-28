@@ -1,0 +1,37 @@
+<configuration>
+
+  <!-- Properties -->
+  <property name="app.name" value="wordsCounter" />
+  <property name="log.pattern" value="%date [%level] from %logger in %thread %message%n%xException" />
+  <property name="log.folder" value="E:/logs/grymco/wordsCounter/" />
+  <property name="file.maxSize" value="5MB" />
+  <property name="file.maxFiles" value="10" />
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"  additivity="false">
+    <file>${log.folder}/${app.name}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <fileNamePattern>${log.folder}/${app.name}.%i.log</fileNamePattern>
+      <minIndex>1</minIndex>
+      <maxIndex>${file.maxFiles}</maxIndex>
+    </rollingPolicy>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>${file.maxSize}</maxFileSize>
+    </triggeringPolicy>
+    <encoder>
+      <pattern>${log.pattern}</pattern>
+    </encoder>
+    <prudent>false</prudent>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${log.pattern}</pattern>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
