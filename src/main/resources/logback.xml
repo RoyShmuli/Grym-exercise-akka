@@ -3,15 +3,15 @@
   <!-- Properties -->
   <property name="app.name" value="wordsCounter" />
   <property name="log.pattern" value="%date [%level] from %logger in %thread %message%n%xException" />
-  <property name="log.folder" value="E:/logs/grymco/wordsCounter/" />
+  <property name="log.folder" value="E:/logs/grymco/wordsCounter" />
   <property name="file.maxSize" value="5MB" />
   <property name="file.maxFiles" value="10" />
 
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"  additivity="false">
-    <file>${log.folder}/${app.name}.log</file>
+    <file>${log.folder}/${app.name}.1.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
       <fileNamePattern>${log.folder}/${app.name}.%i.log</fileNamePattern>
-      <minIndex>1</minIndex>
+      <minIndex>2</minIndex>
       <maxIndex>${file.maxFiles}</maxIndex>
     </rollingPolicy>
     <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">

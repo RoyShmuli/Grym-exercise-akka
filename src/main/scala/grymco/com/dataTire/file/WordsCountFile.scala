@@ -10,7 +10,7 @@ import scala.collection.immutable.ListMap
 object WordsCountFile {
   def storeWordsCount(data:ListMap[String, Integer])(bw:BufferedWriter) = {
     for (element <- data) {
-      bw.write(s"${element._1} ${element._2}\n")
+      bw.write(s"${element._1}-${element._2}\n")
     }
   }
 }

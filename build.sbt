@@ -1,3 +1,7 @@
+import NativePackagerHelper._
+
+enablePlugins(JavaServerAppPackaging)
+
 name := """wordCounter"""
 
 version := "1.0"
@@ -18,5 +22,11 @@ libraryDependencies ++= Seq(
 
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-v")
 
+mainClass in Compile := Some("grymco.com.WordsCounterApp")
 
 fork in run := true
+
+// Assembly settings
+mainClass in Global := Some("grymco.com.WordsCounterApp")
+
+assemblyJarName in assembly := "akka.jar"
